@@ -1,8 +1,8 @@
 ---
-name: test-objects
+name: test-records
 description: Create, edit and verify a clearly named test record (a reminder, note, contact or event) without touching the user's real data, and prove the saved result.
 apps: com.apple.reminders, com.apple.mobilenotes, com.apple.MobileAddressBook, com.google.android.contacts
-tools: launch_app, ask_user, type_text, complete_task
+tools: ask_user, complete_task
 effects: account_change, delete_data
 ---
 
@@ -13,14 +13,12 @@ task (often named "WitX ..." or "test ..."). The user's other records are off li
 
 ## Before you start
 
-- Open the app with `launch_app`; tapping home-screen icons is unreliable.
 - Look at the list first. If a record with the exact name already exists, do not reuse or
   overwrite it: ask the user with `ask_user`, because it may be real data or a leftover.
 
 ## Creating and editing
 
-- Use the exact name and text from the goal, character for character. Type text with
-  `type_text` into a field you have just tapped and that the screenshot shows focused.
+- Use the exact name and text from the goal, character for character.
 - Fill only the fields the goal names. Leave every other field as it is.
 - Saving an ordinary record (reminder, note, contact, event) is not `account_change`:
   that effect is only for the user's own account, password, security or payment settings.
@@ -32,13 +30,6 @@ task (often named "WitX ..." or "test ..."). The user's other records are off li
   row; the panel saves with "Done" at the top right.
 - To change a saved record, open it again from the list and edit the one field; do not
   create a second record.
-- Changing a field's text: `type_text` inserts at the cursor, it does not replace.
-  - If the new text begins with the old text, tap just after the old text's last
-    character (the cursor appears there) and type only the part that is missing.
-  - Otherwise clear the field first: use its clear (x) button if it has one, or
-    long-press the text, choose "Select All", then type the new text over it.
-  - Never delete text one character at a time with the keyboard's delete key: it costs
-    a step per character.
 
 ## Verifying
 
