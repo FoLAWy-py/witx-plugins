@@ -1,0 +1,24 @@
+name: Check
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: plugins
+      # WitX is private: WITX_DEPLOY_KEY is a read-only deploy key of FoLAWy-py/WitX.
+      - uses: actions/checkout@v4
+        with:
+          repository: FoLAWy-py/WitX
+          ssh-key: ${{ secrets.WITX_DEPLOY_KEY }}
+          path: witx
+      - uses: astral-sh/setup-uv@v6
+      - working-directory: witx
+        run: uv run --locked --no-dev --package witx-cloud witx plugin check "$GITHUB_WORKSPACE/plugins"
