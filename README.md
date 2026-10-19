@@ -63,4 +63,4 @@ uv run witx plugin check /path/to/witx-plugins
 
 ## CI
 
-每个 PR 都会用 WitX 最新的 main 运行 `witx plugin check`。WitX 自己的 CI 也会对这个仓库的 main 运行同样的检查：WitX 改名或删除一个工具时，在合并之前就会知道哪些 Skill 会坏。
+每个 PR 都会用 WitX 最新的 main 运行 `witx plugin check`（WitX 是私有仓库，CI 用只读的 deploy key `WITX_DEPLOY_KEY` 拉取它；从 fork 提的 PR 拿不到这个 secret，由维护者合并前在本地检查）。WitX 自己的 CI 也会对这个仓库的 main 运行同样的检查：WitX 改名或删除一个工具时，在合并之前就会知道哪些 Skill 会坏。
