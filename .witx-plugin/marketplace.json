@@ -1,0 +1,12 @@
+{
+  "name": "witx",
+  "owner": { "name": "FoLAWy-py" },
+  "description": "The official WitX plugins.",
+  "plugins": [
+    {
+      "name": "basics",
+      "source": "./plugins/basics",
+      "description": "Everyday know-how that is not about one app."
+    }
+  ]
+}
