@@ -13,8 +13,11 @@ task (often named "WitX ..." or "test ..."). The user's other records are off li
 
 ## Before you start
 
-- Look at the list first. If a record with the exact name already exists, do not reuse or
-  overwrite it: ask the user with `ask_user`, because it may be real data or a leftover.
+- Creating: look at the list first. If a record with the exact name already exists, do
+  not reuse or overwrite it: ask the user with `ask_user`, because it may be real data or
+  a leftover.
+- Changing a record the goal names: finding it is what you expect, so change it without
+  asking. Ask only when more than one record has that name, or none does.
 
 ## Creating and editing
 
